@@ -1,5 +1,7 @@
 package com.flamenco.server.user;
 
+import com.google.common.base.Objects;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -17,7 +19,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String username;
 	private String password;   	
@@ -63,5 +65,14 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-   
+
+	@Override
+	public String toString() {
+		return Objects.toStringHelper(this)
+				.add("id", id)
+				.add("username", username)
+				.add("password", password)
+				.add("email", email)
+				.toString();
+	}
 }

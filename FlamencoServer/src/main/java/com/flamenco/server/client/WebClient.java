@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.flamenco.server.domain.Greeting;
 import com.flamenco.server.user.User;
 
-import retrofit.Call;
-import retrofit.JacksonConverterFactory;
-import retrofit.Retrofit;
-import retrofit.RxJavaCallAdapterFactory;
+import retrofit.*;
 
 public class WebClient {
 
@@ -28,13 +25,17 @@ public class WebClient {
 
     public static void main(String[] args) throws IOException {
     	
-    	HelloService helloService = get("http://localhost:8080").create(HelloService.class);
-        Call<Greeting> helloStringCall = helloService.sayHi();
-        log.debug("Users: " + helloStringCall.execute().body());
+//    	HelloService helloService = get("http://localhost:8080").create(HelloService.class);
+//        Call<Greeting> helloStringCall = helloService.sayHi();
+//        log.debug("Users: " + helloStringCall.execute().body());
 
         UserService service = get("http://localhost:8080").create(UserService.class);
-        Call<User> stringCall = service.getUsers();
-        log.debug("Users: " + stringCall.execute().body());
+
+        Call<Void> user = service.createUser(new User("test", "lala", "arne@fileee.com"));
+        Response<Void> execute = user.execute();
+        log.debug(execute.message());
+//                Call<User> stringCall = service.getUsers();
+//        log.debug("Users: " + stringCall.execute().body());
         
     }
 }

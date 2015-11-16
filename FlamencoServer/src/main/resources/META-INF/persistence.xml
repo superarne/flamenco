@@ -9,11 +9,12 @@
         <class>com.flamenco.server.user.User</class>
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/flamenco"/>
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="root"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://172.17.0.2:3306/flamenco"/>
+            <property name="hibernate.connection.username" value="admin"/>
+            <property name="hibernate.connection.password" value="WVRYBwx4Tz0a"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.useUnicode" value="true"/>
+            <property name="hibernate.hdm2ddl.auto" value="create-drop"/>
             <property name="hibernate.connection.characterEncoding" value="utf-8"/>
             <property name="hibernate.current_session_context_class" value="thread"/>
             <property name="hibernate.show_sql" value="true"/>

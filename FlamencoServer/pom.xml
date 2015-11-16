@@ -16,6 +16,7 @@
         <slf4j.version>1.7.5</slf4j.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
         <jackson.version>2.2.2</jackson.version>
+        <guice.version>4.0</guice.version>
 
     </properties>
 
@@ -29,13 +30,27 @@
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
-            <version>4.0</version>
+            <version>${guice.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
-            <version>4.0</version>
+            <version>${guice.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-persist</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <!-- Hibernate dependencies -->
+
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
@@ -129,23 +144,35 @@
             <artifactId>jul-to-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-		<dependency>
-	  		<groupId>org.hibernate</groupId>
-	  		<artifactId>hibernate-core</artifactId>
-	  		<version>5.0.3.Final</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.hibernate</groupId>
-	  		<artifactId>hibernate-entitymanager</artifactId>
-	  		<version>5.0.3.Final</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>mysql</groupId>
-	  		<artifactId>mysql-connector-java</artifactId>
-	  		<version>5.1.37</version>
-	  	</dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.0.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.0.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.3.0.Final</version>
+        </dependency>
 
     </dependencies>
-    
+
 
 </project>
